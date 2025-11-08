@@ -1,0 +1,247 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    text-align: unset;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+a {
+    color: inherit;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+body {
+    margin: 0 auto;
+    background: #222;
+    color: #fff;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+#root {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+.app header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #111;
+    padding: 15px 20px;
+}
+.app header nav {
+    display: flex;
+    gap: 15px;
+}
+.app header nav button {
+    font-size: 14px;
+    background: #222;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.app header nav button:hover {
+    text-decoration: underline;
+}
+.app header h1 {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+.app section {
+    padding: 20px;
+}
+.app .intro {
+    margin-top: 30dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 175%;
+}
+.app .intro nav {
+    display: flex;
+    align-items: centern;
+    gap: 10px;
+    margin-top: 20px;
+}
+.app .intro nav button {
+    font-size: 14px;
+    background: #111;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.app .intro nav button:hover {
+    text-decoration: underline;
+}
+.app .results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.app .result {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.app h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #0007, -1px 1px #0007, -1px -1px #0007, 1px -1px #0007;
+}
+.app .qr {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app .qr img {
+    max-width: 200px;
+    max-height: 200px;
+}
+.app .qr svg {
+    background: #fff;
+}
+.app .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 0;
+}
+.app .details .summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.app .text, .app .error {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    margin: 10px 5px;
+}
+.app .error {
+    color: #f55;
+}
+.app .timestamp {
+    font-size: 12px;
+    color: #aaa;
+    pointer-events: none;
+    user-select: none;
+}
+.app .badge {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    display: ineline-block;
+    padding: 1px 9px 2px 9px;
+    border-radius: 3px;
+    pointer-events: none;
+    user-select: none;
+}
+.app [data-mode='decode'] {
+    background: #27f;
+}
+.app [data-mode='encode'] {
+    background: #273;
+}
+.app [data-mode='error'] {
+    background: #a22;
+}
+.app .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.app .actions > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.app .actions > div label {
+    width: 35px;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 10px;
+}
+.app .actions .action {
+    font-size: 12px;
+    background: #111;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 100%;
+    width: 100px;
+}
+.app .actions .action:hover {
+    text-decoration: underline;
+}
+.app .actions .action.ack {
+    pointer-events: none;
+}
+.dropzone {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+.dropzone * {
+    pointer-events: none;
+}
+.dropzone.active {
+    pointer-events: auto;
+}
+.dropzone .target {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.dropzone .target h3 {
+    font-size: 22px;
+    color: #aaa;
+}
+.dropzone.active .target {
+    background: #0007;
+    backdrop-filter: blur(20px);
+}
+.dropzone.active.unsupported {
+    background: #f005;
+}
