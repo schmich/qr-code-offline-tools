@@ -15,9 +15,20 @@ async function htmlInjectCSP(html) {
     const scriptHash = await cspHash($('script').text())
     const styleHash = await cspHash($('style').text())
 
+    const policies = [
+        "default-src 'none'",
+        "frame-src 'none'",
+        "frame-ancestors 'none'",
+        "object-src 'none'",
+        'upgrade-insecure-requests',
+        'img-src blob:',
+        `script-src ${scriptHash}`,
+        `style-src ${styleHash}`
+    ]
+
     const csp = $('<meta/>')
         .attr('http-equiv', 'Content-Security-Policy')
-        .attr('content', `default-src 'none'; img-src blob:; script-src ${scriptHash}; style-src ${styleHash}`)
+        .attr('content', policies.join('; '))
 
     $('head').prepend(csp)
 
