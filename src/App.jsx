@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { qrEncodeDecode } from './QR.js'
+import { DownloadIcon } from './Icons.jsx'
 import CodeResult from './CodeResult.jsx'
 import DropZone from './DropZone.jsx'
 
@@ -104,6 +105,8 @@ function App() {
         processItems(items)
     }
 
+    const isLocal = window.location.protocol == 'file:'
+
     return (
         <div className="app">
             <DropZone onDrop={onDropItems}/>
@@ -116,6 +119,16 @@ function App() {
                         <button onClick={onFromFile}>From File</button>
                         <button onClick={onFromText}>From Text</button>
                     </nav>
+                    <footer>
+                        <a href="https://github.com/schmich/qr-code-offline-tools">
+                            github.com/schmich/qr-code-offline-tools
+                        </a>
+                    </footer>
+                    {!isLocal && (
+                        <a href={window.location.pathname} download="qr.html" className="cta">
+                            <DownloadIcon/> Download qr.html
+                        </a>
+                    )}
                 </div>
             )}
             {results.length > 0 && (

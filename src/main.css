@@ -19,6 +19,10 @@ a {
 input, button, textarea, select {
     font: inherit;
 }
+svg.icon {
+    height: 1em;
+    padding-right: 10px;
+}
 body {
     margin: 0 auto;
     background: #222;
@@ -77,6 +81,9 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 175%;
+}
+.app .intro p {
+    color: #999;
 }
 .app .intro nav {
     display: flex;
@@ -206,6 +213,40 @@ body {
 }
 .app .actions .action.ack {
     pointer-events: none;
+}
+.app footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+}
+.app footer a {
+    color: #555;
+    font-size: 14px;
+}
+.app footer a:hover {
+    text-decoration: underline;
+}
+.app .cta {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    background: #273;
+    box-shadow: -40px -40px 175px 30px #273;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 150ms ease;
+}
+.app .cta:hover {
+    background: #293;
+    text-decoration: underline;
+    box-shadow: -40px -40px 175px 60px #293;
 }
 .dropzone {
     position: fixed;
