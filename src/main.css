@@ -236,17 +236,17 @@ body {
     top: 20px;
     display: flex;
     align-items: center;
-    background: #273;
-    box-shadow: -40px -40px 175px 30px #273;
+    background: #293;
+    box-shadow: -40px -40px 175px 30px #293;
     padding: 10px 30px;
     border-radius: 5px;
     font-size: 14px;
     transition: all 150ms ease;
 }
 .app .cta:hover {
-    background: #293;
+    background: #2b3;
     text-decoration: underline;
-    box-shadow: -40px -40px 175px 60px #293;
+    box-shadow: -40px -40px 200px 60px #2b3;
 }
 .dropzone {
     position: fixed;
