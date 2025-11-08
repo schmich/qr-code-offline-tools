@@ -86,7 +86,7 @@ function App() {
     })
 
     async function onFromText() {
-        const text = prompt('Text to encode?')
+        const text = prompt('Text to encode as a QR code:')
         if (text === null) {
             return
         }
