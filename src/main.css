@@ -231,22 +231,27 @@ body {
     text-decoration: underline;
 }
 .app .cta {
+    line-height: 135%;
     position: fixed;
     left: 20px;
     top: 20px;
     display: flex;
     align-items: center;
     background: #293;
-    box-shadow: -40px -40px 175px 30px #293;
-    padding: 10px 30px;
+    box-shadow: -40px -40px 175px 30px #293, 0 0 20px 0px #0007;
+    padding: 15px 30px 15px 20px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
+    text-align: center;
     transition: all 150ms ease;
 }
 .app .cta:hover {
     background: #2b3;
-    text-decoration: underline;
-    box-shadow: -40px -40px 200px 60px #2b3;
+    box-shadow: -40px -40px 200px 70px #2b3;
+}
+.app .cta svg {
+    height: 1.75em;
+    margin-right: 10px;
 }
 .dropzone {
     position: fixed;

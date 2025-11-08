@@ -126,7 +126,8 @@ function App() {
                     </footer>
                     {!isLocal && (
                         <a href={window.location.pathname} download="qr.html" className="cta">
-                            <DownloadIcon/> Download qr.html
+                            <DownloadIcon/>
+                            <div>Download qr.html<br/>to use locally</div>
                         </a>
                     )}
                 </div>
